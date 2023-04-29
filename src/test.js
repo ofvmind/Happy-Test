@@ -96,7 +96,7 @@ function app() {
         const btns = node.querySelectorAll('.button')
         btns.forEach(btn => {
          btn.addEventListener('click', e => {
-             btn.style.background = 
+             btn.style.background = 'darkcyan';
              drop();
              if (type.textContent == 'true' && btn.innerHTML == 'Так') {
                  counter+=1
