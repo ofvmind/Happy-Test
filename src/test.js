@@ -126,6 +126,7 @@ function result() {
 };
 
 start.onclick = () => {
+    document.body.append(backSound);
     testBoard.appendChild(testBackground);
     backSound.src = './src/sounds/test.mp3';
     drop();
