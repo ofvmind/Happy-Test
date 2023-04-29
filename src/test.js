@@ -22,7 +22,6 @@ reset.onclick = () => {
     drop();
     resultTest.replaceWith(start);
     closeTest();
-    //testBackground.remove();
     main.style.margin = '300px auto auto auto';
     backSound.src = '';
 }
@@ -43,7 +42,7 @@ const questions = [
     {q: 'Ми самі винуваті у своїх проблемах?', type: true},
     {q: 'Ви освідчувались в коханні?', type: true},
     {q: 'Ви би стрибнули з парашута?', type: true},
-    {q: 'Ви звинувчуйте інших у своїх невдачах?', type: false},
+    {q: 'Ви звинувачуйте інших в своїх невдачах?', type: false},
     {q: 'Ви часто часто вихваляйтесь?', type: false},
     {q: 'Життя несправедливе?', type: false},
     {q: 'Ви добра людина?', type: true},
