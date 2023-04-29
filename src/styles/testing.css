@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+body {
+    background-image: url(./images//wallper.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: 'Lobster', cursive;
+}    
+
+#main {
+    margin: 300px auto auto auto;
+    max-width: 300px;
+}
+
+.test-board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#start {
+    color: #fff;
+   
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 40px;
+    animation: in 500ms;
+}
+
+#start:hover {
+    background: darkcyan;
+}
+
+.total {
+
+    text-align: center;
+    display: grid;
+    grid-template: repeat(1, 300px);
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 10px;
+    animation: in 500ms;
+}
+
+.ask {
+ 
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+}
+
+.test-background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    width: 100%;
+    background-image: url(./images/test-background.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    animation: show 300ms;
+    opacity: .5;
+}
+
+.close-background {
+    animation: close 350ms;
+}
+
+@keyframes show {
+    0% {
+       transform: scale(0);
+       opacity: 0;
+       border-radius: 50%;
+    }
+}
+
+@keyframes close {
+    100% {
+        transform: scale(0);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
+
+.button {
+  
+    padding: 5px;
+    margin: 5px;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.button:hover {
+    background: darkcyan;
+    font-size: 30px;
+    padding: 1px;
+}
+
+.space-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.anime {
+    display: grid;
+    grid-template-columns: repeat(1, 350px);
+    grid-template-rows: repeat(1, 130px);
+    padding: 40px 0 20px 0;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 10px;
+    animation: in 500ms;
+}
+
+@keyframes in {
+    0% {
+        transform: scale(0);
+    }
+}
+
+.reset {
+    margin: 5px 110px 0 110px;
+    border-radius: 10px;
+    font-size: 22px;
+}
+
+.reset:hover {
+    background: darkcyan;
+}
+
+#inner {
+    padding: 30px;
+}
+
