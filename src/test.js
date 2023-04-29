@@ -29,7 +29,7 @@ reset.onclick = () => {
 
 function drop() {
     const audio = new Audio();
-    audio.src = '../src/sounds/bull.mp3';
+    audio.src = './src/sounds/bull.mp3';
     audio.autoplay = true;
 };
 
