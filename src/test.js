@@ -96,6 +96,9 @@ function app() {
         btns.forEach(btn => {
          btn.addEventListener('click', e => {
              btn.style.background = 'darkcyan';
+             setTimeout(() => {
+                 btn.style.background = 'transparent';
+             }, 100)
              drop();
              if (type.textContent == 'true' && btn.innerHTML == 'Так') {
                  counter+=1
