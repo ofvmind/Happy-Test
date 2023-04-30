@@ -135,7 +135,7 @@ start.onclick = () => {
     drop();
     app();
     start.replaceWith(HTML[0]);
-    main.style.margin = '150px auto auto auto';
+    main.style.margin = '200px auto auto auto';
 };
 
 
