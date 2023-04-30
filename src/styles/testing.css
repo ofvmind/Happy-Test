@@ -72,7 +72,7 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    animation: show 300ms;
+    animation: show 500ms;
     opacity: .5;
 }
 
