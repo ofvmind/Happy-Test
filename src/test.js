@@ -23,7 +23,7 @@ reset.onclick = () => {
     resultTest.replaceWith(start);
     closeTest();
     backSound.src = '';
-    main.style.margin = '200px auto auto auto';
+    main.style.margin = '250px auto auto auto';
 }
 
 function drop() {
@@ -135,7 +135,7 @@ start.onclick = () => {
     drop();
     app();
     start.replaceWith(HTML[0]);
-    main.style.margin = '100px auto auto auto';
+    main.style.margin = '150px auto auto auto';
 };
 
 
