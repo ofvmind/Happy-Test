@@ -82,9 +82,7 @@ body {
 
 @keyframes show {
     0% {
-       transform: scale(0);
        opacity: 0;
-       border-radius: 50%;
     }
 }
 
