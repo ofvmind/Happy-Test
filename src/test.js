@@ -116,11 +116,13 @@ function app() {
              }
              
              if (index == HTML.length -1) {
-                 resultTest.querySelector('h2').textContent = result();
-                 main.style.margin = '150px auto auto auto';
-                 node.replaceWith(resultTest)
-                 resultTest.querySelector('#inner').appendChild(reset);
-                 counter = 0;
+                 setTimeout(() => {
+                     resultTest.querySelector('h2').textContent = result();
+                     main.style.margin = '150px auto auto auto';
+                     node.replaceWith(resultTest)
+                     resultTest.querySelector('#inner').appendChild(reset);
+                     counter = 0;
+                 }, 50);
              }
          }, {once: true});
         })
