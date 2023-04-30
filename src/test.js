@@ -22,7 +22,7 @@ reset.onclick = () => {
     drop();
     resultTest.replaceWith(start);
     closeTest();
-    main.style.margin = '300px auto auto auto';
+    main.style.margin = '250px auto auto auto';
     backSound.src = '';
 }
 
