@@ -26,7 +26,7 @@ reset.onclick = () => {
         resultTest.replaceWith(start);
         closeTest();
         backSound.src = '';
-        main.style.margin = '250px auto auto auto'¦
+        main.style.margin = '250px auto auto auto';
     }, 50);
 }
 
