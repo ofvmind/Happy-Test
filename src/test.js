@@ -19,11 +19,15 @@ reset.classList.add('space-button');
 reset.classList.add('reset');
 reset.textContent = 'Заново';
 reset.onclick = () => {
-    drop();
-    resultTest.replaceWith(start);
-    closeTest();
-    backSound.src = '';
-    main.style.margin = '250px auto auto auto'
+    reset.style.background = 'darkcyan';
+    setTimeout(() => {
+        drop();
+        reset.style.background = 'transparent';
+        resultTest.replaceWith(start);
+        closeTest();
+        backSound.src = '';
+        main.style.margin = '250px auto auto auto'¦
+    }, 50);
 }
 
 function drop() {
@@ -98,7 +102,7 @@ function app() {
              btn.style.background = 'darkcyan';
              setTimeout(() => {
                  btn.style.background = 'transparent';
-             }, 100)
+             }, 50)
              drop();
              if (type.textContent == 'true' && btn.innerHTML == 'Так') {
                  counter+=1
@@ -108,7 +112,7 @@ function app() {
              if (index !== HTML.length -1) {
                 setTimeout(() => {
                     node.replaceWith(HTML[index + 1]);
-                }, 100);
+                }, 50);
              }
              
              if (index == HTML.length -1) {
@@ -132,13 +136,17 @@ function result() {
 };
 
 start.onclick = () => {
-    document.body.append(backSound);
-    testBoard.appendChild(testBackground);
-    backSound.src = './src/sounds/test.mp3';
-    drop();
-    app();
-    start.replaceWith(HTML[0]);
-    main.style.margin = '180px auto auto auto';
+    start.style.background = 'darkcyan';
+    setTimeout(() => {
+        document.body.append(backSound);
+        testBoard.appendChild(testBackground);
+        backSound.src = './src/sounds/test.mp3';
+        drop();
+        app();
+        start.style.background = 'rgba(0, 0, 0, .8)';
+        start.replaceWith(HTML[0]);
+        main.style.margin = '180px auto auto auto';
+    }, 50);
 };
 
 
