@@ -22,7 +22,6 @@ reset.onclick = () => {
     drop();
     resultTest.replaceWith(start);
     closeTest();
-    main.style.margin = '250px auto auto auto';
     backSound.src = '';
 }
 
@@ -134,8 +133,7 @@ start.onclick = () => {
     backSound.src = './src/sounds/test.mp3';
     drop();
     app();
-    start.replaceWith(HTML[0])
-    main.style.margin = '200px auto auto auto';
+    start.replaceWith(HTML[0]);
 };
 
 
