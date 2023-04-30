@@ -106,7 +106,9 @@ function app() {
                  counter+=1;
              }; 
              if (index !== HTML.length -1) {
-                node.replaceWith(HTML[index + 1])
+                setTimeout(() => {
+                    node.replaceWith(HTML[index + 1]);
+                }, 100);
              }
              
              if (index == HTML.length -1) {
