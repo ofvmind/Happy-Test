@@ -42,7 +42,7 @@ body {
     text-align: center;
     display: grid;
     grid-template: repeat(1, 300px);
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.8);
     border-radius: 10px;
     animation: in 500ms;
 }
@@ -121,7 +121,7 @@ body {
     grid-template-columns: repeat(1, 350px);
     grid-template-rows: repeat(1, 130px);
     padding: 40px 0 20px 0;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.8);
     border-radius: 10px;
     animation: in 500ms;
 }
