@@ -110,7 +110,7 @@ function app() {
              
              if (index == HTML.length -1) {
                  resultTest.querySelector('h2').textContent = result();
-                 main.styles.margin = '250px auto auto auto';
+                 main.style.margin = '250px auto auto auto';
                  node.replaceWith(resultTest)
                  resultTest.querySelector('#inner').appendChild(reset);
                  counter = 0;
