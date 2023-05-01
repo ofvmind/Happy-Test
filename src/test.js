@@ -66,7 +66,7 @@ const questions = [
     {q: 'Все в твоїх руках?', type: true},
 ];
 
-const HTML = questions.map((el, index) => {
+const HTML = questions.sort(() => Math.random() - 0.5).map((el, index) => {
     if (el.type) {
         const question = document.createElement('div');
         question.classList.add('anime');
