@@ -113,10 +113,6 @@ function app() {
         btn.addEventListener('mouseover', e => btn.style.background = 'darkcyan');
         btn.addEventListener('mouseout', e => btn.style.background = 'transparent');   
          btn.addEventListener('click', e => {
-             btn.style.background = 'darkcyan';
-             setTimeout(() => {
-                 btn.style.background = 'transparent';
-             }, 50)
              drop();
              if (type.textContent == 'true' && btn.innerHTML == 'Так') {
                  counter+=1
@@ -137,7 +133,12 @@ function app() {
                      resultTest.querySelector('#inner').appendChild(reset);
                      counter = 0;
                  }, 50);
-             }
+             };
+             btn.style.background = 'darkcyan';
+             setTimeout(() => {
+                 btn.style.background = 'transparent';
+             }, 50)
+             drop();
          }, {once: true});
         })
      })
@@ -168,6 +169,7 @@ start.onclick = () => {
         main.style.margin = '180px auto auto auto';
     }, 50);
 };
+
 
 
 
