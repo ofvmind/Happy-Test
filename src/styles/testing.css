@@ -25,8 +25,7 @@ body {
 
 #start {
     color: #fff;
-   
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(82, 2, 49, 0.8);
     border-radius: 10px;
     padding: 10px;
     font-size: 40px;
@@ -42,7 +41,7 @@ body {
     text-align: center;
     display: grid;
     grid-template: repeat(1, 300px);
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(82, 2, 49, 0.8);
     border-radius: 10px;
     animation: in 500ms;
 }
@@ -88,9 +87,7 @@ body {
 
 @keyframes close {
     100% {
-        transform: scale(0);
         opacity: 0;
-        border-radius: 50%;
     }
 }
 
@@ -105,7 +102,6 @@ body {
 }
 
 .button:hover {
-    background: darkcyan;
     font-size: 30px;
     padding: 1px;
 }
@@ -121,7 +117,7 @@ body {
     grid-template-columns: repeat(1, 350px);
     grid-template-rows: repeat(1, 130px);
     padding: 40px 0 20px 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(82, 2, 49, 0.8);
     border-radius: 10px;
     animation: in 500ms;
 }
@@ -140,11 +136,8 @@ body {
     color: #fff;
 }
 
-.reset:hover {
-    background: darkcyan;
-}
-
 #inner {
     padding: 30px;
 }
+
 
