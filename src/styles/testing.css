@@ -100,11 +100,6 @@ body {
     color: #fff;
 }
 
-.button:hover {
-    font-size: 30px;
-    padding: 1px;
-}
-
 .space-button {
     display: flex;
     align-items: center;
