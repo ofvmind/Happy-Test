@@ -43,7 +43,7 @@ body {
     grid-template: repeat(1, 300px);
     background: rgba(82, 2, 49, 0.8);
     border-radius: 10px;
-    animation: in 500ms;
+    animation: in 800ms;
 }
 
 .ask {
@@ -119,11 +119,12 @@ body {
     padding: 40px 0 20px 0;
     background: rgba(82, 2, 49, 0.8);
     border-radius: 10px;
-    animation: in 500ms;
+    animation: in 800ms;
 }
 
 @keyframes in {
     0% {
+        opacity: 0;
         transform: scale(0);
     }
 }
@@ -139,5 +140,6 @@ body {
 #inner {
     padding: 30px;
 }
+
 
 
