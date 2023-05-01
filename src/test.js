@@ -137,8 +137,7 @@ function app() {
              btn.style.background = 'darkcyan';
              setTimeout(() => {
                  btn.style.background = 'transparent';
-             }, 50)
-             drop();
+             }, 50);
          }, {once: true});
         })
      })
