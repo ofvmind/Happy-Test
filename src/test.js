@@ -157,14 +157,14 @@ start.addEventListener('mouseover', e => start.style.background = 'darkcyan');
 start.addEventListener('mouseout', e => start.style.background = 'rgba(82, 2, 49, 0.8)');
 
 start.onclick = () => {
+    drop();
     start.style.background = 'darkcyan';
+    app();
     setTimeout(() => {
         start.style.background = 'rgba(82, 2, 49, 0.8)';
         document.body.append(backSound);
         testBoard.appendChild(testBackground);
         backSound.src = './src/sounds/test.mp3';
-        drop();
-        app();
         start.replaceWith(HTML[0]);
         main.style.margin = '180px auto auto auto';
     }, 50);
