@@ -18,6 +18,8 @@ const reset = document.createElement('h3');
 reset.classList.add('space-button');
 reset.classList.add('reset');
 reset.textContent = 'Заново';
+reset.addEventListener('mouseover', e => reset.style.background = 'darkcyan');
+reset.addEventListener('mouseout', e => reset.style.background = 'transparent');
 reset.onclick = () => {
     reset.style.background = 'darkcyan';
     setTimeout(() => {
@@ -52,6 +54,16 @@ const questions = [
     {q: 'Ви добра людина?', type: true},
     {q: 'Ви злопамятний?', type: false},
     {q: 'Ви любите життя?', type: true},
+    {q: 'Ви важко переносите образи/невдачі?', type: false},
+    {q: 'Ви слідкуєте за собою?', type: true},
+    {q: 'Ви товариська людина?', type: true},
+    {q: 'Часто заздрите іншим?', type: false},
+    {q: 'Ви вмійте сказати собі ні?', type: true},
+    {q: 'Треба вміти вибачати?', type: true},
+    {q: 'Ви молодець?', type: true},
+    {q: 'У вас э люди, яким можете відкритись?', type: true},
+    {q: 'Ваше почуття гумору на висоті?', type: true},
+    {q: 'Все в твоїх руках?', type: true},
 ];
 
 const HTML = questions.map((el, index) => {
@@ -98,6 +110,8 @@ function app() {
     HTML.forEach((node, index) => {
         const btns = node.querySelectorAll('.button')
         btns.forEach(btn => {
+        btn.addEventListener('mouseover', e => btn.style.background = 'darkcyan');
+        btn.addEventListener('mouseout', e => btn.style.background = 'transparent');   
          btn.addEventListener('click', e => {
              btn.style.background = 'darkcyan';
              setTimeout(() => {
@@ -131,21 +145,25 @@ function app() {
 
 
 function result() {
-    if (counter <= 5) return 'Будь-те впевненіше';
-    else if (counter > 5 && counter < 10) return 'Більше позитиву в думках';
-    else if (counter >= 10 && counter < 14) return 'Непогано, гарний потенціал';
-    else if (counter >= 13) return 'Ви впевнена у собі людина';
+    if (counter <= 8) return 'Не приймайте все, так близько до серця';
+    else if (counter > 8 && counter < 14) return 'Не приймайте все, так близько до серця';
+    else if (counter >=14 && counter < 18) return ' Більше позитиву в думках))';
+    else if (counter >= 18 && counter < 23) return 'Непогано, гарний потенціал';
+    else if (counter >= 23) return 'Ви впевнена у собі людина';
 };
+
+start.addEventListener('mouseover', e => start.style.background = 'darkcyan');
+start.addEventListener('mouseout', e => start.style.background = 'rgba(82, 2, 49, 0.8)');
 
 start.onclick = () => {
     start.style.background = 'darkcyan';
     setTimeout(() => {
+        start.style.background = 'rgba(82, 2, 49, 0.8)';
         document.body.append(backSound);
         testBoard.appendChild(testBackground);
         backSound.src = './src/sounds/test.mp3';
         drop();
         app();
-        start.style.background = 'rgba(0, 0, 0, .8)';
         start.replaceWith(HTML[0]);
         main.style.margin = '180px auto auto auto';
     }, 50);
