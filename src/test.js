@@ -84,7 +84,7 @@ const questions = [
     {q: 'Ви вмійте сказати собі ні?', type: true},
     {q: 'Треба вміти вибачати?', type: true},
     {q: 'Ви молодець?', type: true},
-    {q: 'У вас э люди, яким можете відкритись?', type: true},
+    {q: 'У вас э люди, яким ви можете відкритись?', type: true},
     {q: 'Ваше почуття гумору на висоті?', type: true},
     {q: 'Все в твоїх руках?', type: true},
 ];
@@ -139,7 +139,7 @@ function app() {
         btn.addEventListener('mouseover', e => btn.style.background = 'darkcyan');
         btn.addEventListener('mouseout', e => btn.style.background = 'transparent');   
          btn.addEventListener('click', e => {
-             questionNumber.innerHTML = `Питання ${index + 2} з 25`;
+             questionNumber.innerHTML = `Питання ${index + 2} із 25`;
              setTimeout(() => drop(), 250);
              
              if (type.textContent == 'true' && btn.innerHTML == 'Так') {
@@ -197,7 +197,7 @@ start.onclick = () => {
         testBoard.appendChild(testBackground);
         backSound.src = './src/sounds/test.mp3';
         document.body.prepend(questionNumber);
-        questionNumber.innerHTML = `Питання 1 з 25`;
+        questionNumber.innerHTML = `Питання 1 із 25`;
         main.style.margin = '160px auto auto auto';
     }, 50);
 };
