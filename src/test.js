@@ -92,7 +92,7 @@ const questions = [
 const questionNumber = document.createElement('div');
 questionNumber.classList.add('question-number');
 
-const HTML = questions.map((el, index) => {
+const HTML = questions.sort(() => Math.random() - 0.50).map((el, index) => {
     if (el.type) {
         const question = document.createElement('div');
         question.classList.add('anime');
@@ -133,7 +133,7 @@ resultTest.innerHTML = `
 let counter = 0;
 
 function app() {
-    HTML.sort(() => Math.random() - 0.5).forEach((node, index) => {
+    HTML.forEach((node, index) => {
         const btns = node.querySelectorAll('.button')
         btns.forEach(btn => {
         btn.addEventListener('mouseover', e => btn.style.background = 'darkcyan');
@@ -200,6 +200,7 @@ start.onclick = () => {
         main.style.margin = '160px auto auto auto';
     }, 50);
 };
+
 
 
 
