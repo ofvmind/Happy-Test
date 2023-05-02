@@ -140,7 +140,7 @@ function app() {
         btn.addEventListener('mouseout', e => btn.style.background = 'transparent');   
          btn.addEventListener('click', e => {
              questionNumber.innerHTML = `Питання ${index + 2} з 25`;
-             setTimeout(() => drop(), 100)
+             setTimeout(() => drop(), 250);
              
              if (type.textContent == 'true' && btn.innerHTML == 'Так') {
                  counter+=1
