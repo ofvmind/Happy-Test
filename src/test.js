@@ -1,12 +1,15 @@
 const testBoard = document.querySelector('.test-board');
 const start = document.querySelector('#start');
 
+let counter = 0;
+
 const stopTest = document.createElement('div');
 stopTest.innerHTML =  `
 <button class="stop-test">&times;</button>
 `;
 stopTest.classList.add('center-button');
 stopTest.onclick = () => {
+    counter = 0;
     stopTest.style.color = 'darkcyan';
     drop();
     setTimeout(() => {
@@ -129,8 +132,6 @@ resultTest.innerHTML = `
     <h2 class="ask"></h2>
 </div>
 `;
-
-let counter = 0;
 
 function app() {
     HTML.forEach((node, index) => {
