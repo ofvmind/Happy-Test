@@ -87,42 +87,13 @@ const questions = [
     {q: 'Ви вмійте сказати собі ні?', type: true},
     {q: 'Треба вміти вибачати?', type: true},
     {q: 'Ви молодець?', type: true},
-    {q: 'У вас э люди, яким ви можете відкритись?', type: true},
+    {q: 'У вас э люди, яким можете відкритись?', type: true},
     {q: 'Ваше почуття гумору на висоті?', type: true},
     {q: 'Все в твоїх руках?', type: true},
 ];
 
 const questionNumber = document.createElement('div');
 questionNumber.classList.add('question-number');
-
-const HTML = questions.sort(() => Math.random() - 0.50).map((el, index) => {
-    if (el.type) {
-        const question = document.createElement('div');
-        question.classList.add('anime');
-        question.innerHTML = `
-        <p id="type" style="display: none">true</p> 
-        <h1 class="ask">${el.q}</h1>
-        <div class="center-button">
-            <h3 id="yesButton${index + 1}" class="button">Так</h3>
-            <h3 id="noButton${index + 1}" class="button">Ні</h3>
-        </div>
-        `;
-        return question;
-    }
-    else {
-        const question = document.createElement('div');
-        question.classList.add('anime');
-        question.innerHTML = `
-        <p id="type" style="display: none">false</p> 
-        <h1 class="ask">${el.q}</h1>
-        <div class="center-button">
-            <h3 id="yesButton" class="button">Так</h3>
-            <h3 id="noButton" class="button">Ні</h3>
-        </div>
-        `;
-        return question;
-    } 
-});
 
 const resultTest = document.createElement('div');
 resultTest.classList.add('total');
@@ -134,14 +105,42 @@ resultTest.innerHTML = `
 `;
 
 function app() {
+    const HTML = questions.sort(() => Math.random() - 0.50).map((el, index) => {
+        if (el.type) {
+            const question = document.createElement('div');
+            question.classList.add('anime');
+            question.innerHTML = `
+            <p id="type" style="display: none">true</p> 
+            <h1 class="ask">${el.q}</h1>
+            <div class="center-button">
+                <h3 id="yesButton${index + 1}" class="button">Так</h3>
+                <h3 id="noButton${index + 1}" class="button">Ні</h3>
+            </div>
+            `;
+            return question;
+        }
+        else {
+            const question = document.createElement('div');
+            question.classList.add('anime');
+            question.innerHTML = `
+            <p id="type" style="display: none">false</p> 
+            <h1 class="ask">${el.q}</h1>
+            <div class="center-button">
+                <h3 id="yesButton" class="button">Так</h3>
+                <h3 id="noButton" class="button">Ні</h3>
+            </div>
+            `;
+            return question;
+        } 
+    });
+
     HTML.forEach((node, index) => {
         const btns = node.querySelectorAll('.button')
         btns.forEach(btn => {
         btn.addEventListener('mouseover', e => btn.style.background = 'darkcyan');
         btn.addEventListener('mouseout', e => btn.style.background = 'transparent');   
          btn.addEventListener('click', e => {
-             questionNumber.innerHTML = `Питання ${index + 2} з 25`;
-             setTimeout(() => drop(), 250);
+             setTimeout(() => drop(), 250)
              
              if (type.textContent == 'true' && btn.innerHTML == 'Так') {
                  counter+=1
@@ -149,6 +148,7 @@ function app() {
                  counter+=1;
              }; 
              if (index !== HTML.length -1) {
+                questionNumber.innerHTML = `Питання ${index + 2} з 25`;
                 setTimeout(() => {
                     node.replaceWith(HTML[index + 1]);
                 }, 50);
@@ -172,6 +172,7 @@ function app() {
          }, {once: true});
         })
      })
+     start.replaceWith(HTML[0]);
 };
 
 
@@ -191,7 +192,7 @@ start.onclick = () => {
     app();
     start.style.background = 'darkcyan';
     setTimeout(() => {
-        start.replaceWith(HTML[0]);
+        
         document.body.append(stopTest);
         start.style.background = 'rgba(82, 2, 49, 0.8)';
         document.body.append(backSound);
@@ -202,7 +203,6 @@ start.onclick = () => {
         main.style.margin = '160px auto auto auto';
     }, 50);
 };
-
 
 
 
