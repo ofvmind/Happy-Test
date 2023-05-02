@@ -1,6 +1,25 @@
 const testBoard = document.querySelector('.test-board');
 const start = document.querySelector('#start');
 
+const stopTest = document.createElement('div');
+stopTest.innerHTML =  `
+<button class="stop-test">&times;</button>
+`;
+stopTest.classList.add('center-button');
+stopTest.onclick = () => {
+    stopTest.style.color = 'darkcyan';
+    drop();
+    setTimeout(() => {
+        stopTest.style.color = '#fff';
+        backSound.src = '';
+        stopTest.remove();
+        document.querySelector('.anime').replaceWith(start);
+        main.style.margin = '250px auto auto auto';
+        closeTest();
+        questionNumber.remove();
+    }, 50);
+};
+
 const backSound = document.createElement('audio');
 backSound.autoplay = true;
 
@@ -11,7 +30,7 @@ function closeTest() {
     setTimeout(() => {
         testBackground.classList.remove('close-background');
         testBackground.remove();
-    }, 340);
+    }, 490);
 };
 
 const reset = document.createElement('h3');
@@ -25,12 +44,16 @@ reset.onclick = () => {
     setTimeout(() => {
         drop();
         reset.style.background = 'transparent';
-        resultTest.replaceWith(start);
         closeTest();
         backSound.src = '';
-        main.style.margin = '250px auto auto auto';
+        resultTest.classList.add('close-background');
     }, 50);
-}
+    setTimeout(() => {
+        resultTest.classList.remove('close-background');
+        resultTest.replaceWith(start);
+        main.style.margin = '250px auto auto auto';
+    }, 490);
+};
 
 function drop() {
     const audio = new Audio();
@@ -66,6 +89,9 @@ const questions = [
     {q: 'Все в твоїх руках?', type: true},
 ];
 
+const questionNumber = document.createElement('div');
+questionNumber.classList.add('question-number');
+
 const HTML = questions.sort(() => Math.random() - 0.5).map((el, index) => {
     if (el.type) {
         const question = document.createElement('div');
@@ -73,7 +99,7 @@ const HTML = questions.sort(() => Math.random() - 0.5).map((el, index) => {
         question.innerHTML = `
         <p id="type" style="display: none">true</p> 
         <h1 class="ask">${el.q}</h1>
-        <div class="space-button">
+        <div class="center-button">
             <h3 id="yesButton${index + 1}" class="button">Так</h3>
             <h3 id="noButton${index + 1}" class="button">Ні</h3>
         </div>
@@ -86,7 +112,7 @@ const HTML = questions.sort(() => Math.random() - 0.5).map((el, index) => {
         question.innerHTML = `
         <p id="type" style="display: none">false</p> 
         <h1 class="ask">${el.q}</h1>
-        <div class="space-button">
+        <div class="center-button">
             <h3 id="yesButton" class="button">Так</h3>
             <h3 id="noButton" class="button">Ні</h3>
         </div>
@@ -113,6 +139,7 @@ function app() {
         btn.addEventListener('mouseover', e => btn.style.background = 'darkcyan');
         btn.addEventListener('mouseout', e => btn.style.background = 'transparent');   
          btn.addEventListener('click', e => {
+             questionNumber.innerHTML = `Питання ${index + 2} з 25`;
              drop();
              if (type.textContent == 'true' && btn.innerHTML == 'Так') {
                  counter+=1
@@ -127,8 +154,10 @@ function app() {
              
              if (index == HTML.length -1) {
                  setTimeout(() => {
+                     questionNumber.remove();
+                     stopTest.remove();
                      resultTest.querySelector('h2').textContent = result();
-                     main.style.margin = '150px auto auto auto';
+                     main.style.margin = '130px auto auto auto';
                      node.replaceWith(resultTest)
                      resultTest.querySelector('#inner').appendChild(reset);
                      counter = 0;
@@ -157,17 +186,21 @@ start.addEventListener('mouseout', e => start.style.background = 'rgba(82, 2, 49
 
 start.onclick = () => {
     drop();
-    start.style.background = 'darkcyan';
     app();
+    start.style.background = 'darkcyan';
     setTimeout(() => {
+        start.replaceWith(HTML[0]);
+        document.body.append(stopTest);
         start.style.background = 'rgba(82, 2, 49, 0.8)';
         document.body.append(backSound);
         testBoard.appendChild(testBackground);
         backSound.src = './src/sounds/test.mp3';
-        start.replaceWith(HTML[0]);
-        main.style.margin = '180px auto auto auto';
+        document.body.prepend(questionNumber);
+        questionNumber.innerHTML = `Питання 1 з 25`;
+        main.style.margin = '160px auto auto auto';
     }, 50);
 };
+
 
 
 
