@@ -89,12 +89,23 @@ const questions = [
     {q: 'Ви слідкуєте за собою?', type: true},
     {q: 'Ви товариська людина?', type: true},
     {q: 'Часто заздрите іншим?', type: false},
-    {q: 'Ви вмійте сказати собі ні?', type: true},
+    {q: 'Ви вмієте сказати собі ні?', type: true},
     {q: 'Треба вміти вибачати?', type: true},
     {q: 'Ви молодець?', type: true},
     {q: 'У вас э люди, яким можете відкритись?', type: true},
     {q: 'Ваше почуття гумору на висоті?', type: true},
     {q: 'Все в твоїх руках?', type: true},
+    {q: 'У вас є відчуття стилю?', type: true},
+    {q: 'Ви залежні від думок інших людей?', type: false},
+    {q: 'Вихід є завжди?', type: true},
+    {q: 'Ви вмієте тримати себе в руках?', type: true},
+    {q: 'Порядок вдома, порядок в голові?', type: true},
+    {q: 'У вас часто з`являються негативні думкаи?', type: false},
+    {q: 'Ви вмієте релаксувати?', type: true},
+    {q: 'Дуже боїтесь невдач/програшу?', type: false},
+    {q: 'Всі чоловіки/жінки погані?', type: false},
+    {q: 'Ви часто кажете слова ненависті?', type: false},
+    {q: 'Добро є?', type: false},
 ];
 
 const questionNumber = document.createElement('div');
@@ -137,7 +148,7 @@ function app() {
             `;
             return question;
         } 
-    });
+    }).slice(0, 25);
 
     HTML.forEach((node, index) => {
         const btns = node.querySelectorAll('.button')
@@ -183,11 +194,11 @@ function app() {
 
 
 function result() {
-    if (counter <= 8) return 'Не приймайте все, так близько до серця';
+    if (counter <= 8) return 'Життя не таке погане як здається, дайте йому шанс))';
     else if (counter > 8 && counter < 14) return 'Не приймайте все, так близько до серця';
     else if (counter >=14 && counter < 18) return ' Більше позитиву в думках))';
     else if (counter >= 18 && counter < 23) return 'Непогано, гарний потенціал';
-    else if (counter >= 23) return 'Ви впевнена у собі людина';
+    else if (counter >= 23) return 'Ви впевнена, позитивна людина))';
 };
 
 start.addEventListener('mouseover', e => start.style.background = 'darkcyan');
@@ -209,5 +220,7 @@ start.onclick = () => {
         main.style.margin = '160px auto auto auto';
     }, 50);
 };
+
+
 
 
