@@ -7,20 +7,25 @@ const stopTest = document.createElement('div');
 stopTest.innerHTML =  `
 <button class="stop-test">&times;</button>
 `;
-stopTest.classList.add('center-button');
+stopTest.classList.add('center-button')
 stopTest.onclick = () => {
     counter = 0;
     stopTest.style.color = 'darkcyan';
     drop();
+    backSound.src = '';
+    document.querySelector('.anime').style.animation = 'close 500ms';
+    questionNumber.style.animation = 'close 500ms';
+    stopTest.classList.add('close-background');
     setTimeout(() => {
         stopTest.style.color = '#fff';
-        backSound.src = '';
+        questionNumber.style.animation = 'in 800ms';
+        stopTest.classList.remove('close-background');
         stopTest.remove();
         document.querySelector('.anime').replaceWith(start);
         main.style.margin = '250px auto auto auto';
         closeTest();
         questionNumber.remove();
-    }, 50);
+    }, 490);
 };
 
 const backSound = document.createElement('audio');
@@ -140,6 +145,7 @@ function app() {
         btn.addEventListener('mouseover', e => btn.style.background = 'darkcyan');
         btn.addEventListener('mouseout', e => btn.style.background = 'transparent');   
          btn.addEventListener('click', e => {
+
              setTimeout(() => drop(), 250)
              
              if (type.textContent == 'true' && btn.innerHTML == 'Так') {
@@ -203,8 +209,5 @@ start.onclick = () => {
         main.style.margin = '160px auto auto auto';
     }, 50);
 };
-
-
-
 
 
