@@ -121,13 +121,14 @@ body {
 }
 
 .anime {
+    --anim: in 800ms;
     display: grid;
     grid-template-columns: repeat(1, 350px);
     grid-template-rows: repeat(1, 130px);
     padding: 40px 0 20px 0;
     background: rgba(82, 2, 49, 0.8);
     border-radius: 10px;
-    animation: in 800ms;
+    animation: var(--anim);
 }
 
 @keyframes in {
@@ -172,5 +173,8 @@ body {
         opacity: 0;
     }
 }
+
+
+
 
 
