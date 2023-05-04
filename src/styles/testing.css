@@ -143,7 +143,12 @@ body {
     border-radius: 10px;
     padding: 5px;
     font-size: 22px;
+    border-radius: 10px;
     color: #fff;
+}
+
+.reset:hover  {
+    color: darkcyan;
 }
 
 #inner {
