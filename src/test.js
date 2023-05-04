@@ -13,9 +13,10 @@ stopTest.onclick = () => {
     stopTest.style.color = 'darkcyan';
     drop();
     backSound.src = '';
-    document.querySelector('.anime').style.animation = 'close 500ms';
+    document.querySelector('.anime').style.setProperty('--anim', 'close 500ms');
     questionNumber.style.animation = 'close 500ms';
     stopTest.classList.add('close-background');
+    closeTest();
     setTimeout(() => {
         stopTest.style.color = '#fff';
         questionNumber.style.animation = 'in 800ms';
@@ -23,7 +24,6 @@ stopTest.onclick = () => {
         stopTest.remove();
         document.querySelector('.anime').replaceWith(start);
         main.style.margin = '250px auto auto auto';
-        closeTest();
         questionNumber.remove();
     }, 490);
 };
@@ -220,6 +220,7 @@ start.onclick = () => {
         main.style.margin = '160px auto auto auto';
     }, 50);
 };
+
 
 
 
