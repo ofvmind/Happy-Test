@@ -10,7 +10,7 @@ stopTest.innerHTML =  `
 stopTest.classList.add('center-button')
 stopTest.onclick = () => {
     counter = 0;
-    stopTest.style.color = 'darkcyan';
+    stopTest.querySelector('.stop-test').style.color = 'darkcyan';
     drop();
     backSound.src = '';
     document.querySelector('.anime').style.setProperty('--anim', 'close 500ms');
@@ -18,7 +18,7 @@ stopTest.onclick = () => {
     stopTest.classList.add('close-background');
     closeTest();
     setTimeout(() => {
-        stopTest.style.color = '#fff';
+        stopTest.querySelector('.stop-test').style.color = '#fff';
         questionNumber.style.animation = 'in 800ms';
         stopTest.classList.remove('close-background');
         stopTest.remove();
