@@ -7,7 +7,9 @@ const stopTest = document.createElement('div');
 stopTest.innerHTML =  `
 <button class="stop-test">&times;</button>
 `;
-stopTest.classList.add('center-button')
+stopTest.classList.add('center-button');
+stopTes.addEventListener('mouseover', e => stopTest.style.color = 'darkcyan');
+stopTest.addEventListener('mouseout', e => stopTest.style.color = '#fff');
 stopTest.onclick = () => {
     counter = 0;
     stopTest.querySelector('.stop-test').style.color = 'darkcyan';
