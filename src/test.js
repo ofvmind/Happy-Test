@@ -12,7 +12,7 @@ stopTest.addEventListener('mouseover', e => stopTest.style.color = 'darkcyan');
 stopTest.addEventListener('mouseout', e => stopTest.style.color = '#fff');
 stopTest.onclick = () => {
     counter = 0;
-    stopTest.querySelector('.stop-test').style.color = 'darkcyan';
+    stopTest.style.color = 'darkcyan';
     drop();
     backSound.src = '';
     document.querySelector('.anime').style.setProperty('--anim', 'close 500ms');
@@ -20,7 +20,7 @@ stopTest.onclick = () => {
     stopTest.classList.add('close-background');
     closeTest();
     setTimeout(() => {
-        stopTest.querySelector('.stop-test').style.color = '#fff';
+        stopTest.style.color = '#fff';
         questionNumber.style.animation = 'in 800ms';
         stopTest.classList.remove('close-background');
         stopTest.remove();
