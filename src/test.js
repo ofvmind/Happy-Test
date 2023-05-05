@@ -8,8 +8,6 @@ stopTest.innerHTML =  `
 <button class="stop-test">&times;</button>
 `;
 stopTest.classList.add('center-button');
-stopTest.addEventListener('mouseover', e => stopTest.style.color = 'darkcyan');
-stopTest.addEventListener('mouseout', e => stopTest.style.color = '#fff');
 stopTest.onclick = () => {
     counter = 0;
     stopTest.style.color = 'darkcyan';
@@ -222,6 +220,7 @@ start.onclick = () => {
         main.style.margin = '160px auto auto auto';
     }, 50);
 };
+
 
 
 
